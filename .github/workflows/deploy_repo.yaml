@@ -29,7 +29,7 @@ jobs:
       run: pwd && ls && cd SOFA-Chips && source ./.github/workflows/sync_repo.sh
 
     - name: Commit files
-      working-directory: ${{ runner.workspace }}/Caravel-SOFA-HD
+      working-directory: Caravel-SOFA-HD
       run: |
         git config --local user.email "lnis.uofu@github.com"
         git config --local user.name "lnis.uofu"
