@@ -15,7 +15,7 @@ jobs:
     - name: Checkout SOFA-Chips
       uses: actions/checkout@v2
       with:
-        path: SOFA-Chips
+        path: ${{ runner.workspace }}/SOFA-Chips
 
     - name: Checkout Caravel-SOFA-HD
       uses: actions/checkout@master
@@ -23,11 +23,11 @@ jobs:
         repository: ganeshgore/dummyTestRepo
         # repository: lnis-uofu/Caravel-SOFA-HD
         token: ${{ secrets.GITHUB_TOKEN }}
-        path: Caravel-SOFA-HD
+        path: ${{ runner.workspace }}/Caravel-SOFA-HD
 
     - name: Updating files
       working-directory: ${{ runner.workspace }}/SOFA-Chips
-      run: source ./.github/workflows/sync_repo.sh
+      run: pwd && ls && source ./.github/workflows/sync_repo.sh
 
     - name: Commit files
       working-directory: ${{ runner.workspace }}/Caravel-SOFA-HD
