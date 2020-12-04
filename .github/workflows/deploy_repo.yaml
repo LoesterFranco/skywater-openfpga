@@ -37,7 +37,6 @@ jobs:
         pwd && ls
         git config --local user.email "lnis.uofu@github.com"
         git config --local user.name "lnis.uofu"
-        cd Caravel-SOFA-HD
         git commit -m "Auto commit" -a
 
     - name: Push changes
