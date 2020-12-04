@@ -28,9 +28,13 @@ jobs:
     - name: Updating files
       run: pwd && ls && cd SOFA-Chips && source ./.github/workflows/sync_repo.sh
 
+    - name: View directory
+      run: pwd && ls
+
     - name: Commit files
-      working-directory: Caravel-SOFA-HD
       run: |
+        echo ${{runner.workspace}}
+        echo ${{GITHUB_WORKSPACE}}
         git config --local user.email "lnis.uofu@github.com"
         git config --local user.name "lnis.uofu"
         cd Caravel-SOFA-HD
