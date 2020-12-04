@@ -34,7 +34,6 @@ jobs:
     - name: Commit files
       run: |
         echo ${{runner.workspace}}
-        echo ${{GITHUB_WORKSPACE}}
         git config --local user.email "lnis.uofu@github.com"
         git config --local user.name "lnis.uofu"
         cd Caravel-SOFA-HD
